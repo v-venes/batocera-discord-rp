@@ -1,0 +1,124 @@
+@import './base.css';
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.logo {
+  -webkit-user-drag: none;
+  height: 128px;
+  width: 128px;
+  will-change: filter;
+  transition: filter 300ms;
+  border-radius: 64px;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 1.2em #6988e6aa);
+}
+
+.text {
+  font-size: 20px;
+  color: var(--ev-c-text-1);
+  font-weight: 600;
+  line-height: 14px;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.tip {
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--ev-c-text-2);
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  padding-top: 8px;
+  margin: -6px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.action {
+  padding: 4px;
+}
+
+.action a {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid transparent;
+  text-align: center;
+  font-weight: 600;
+  white-space: nowrap;
+  border-radius: 20px;
+  padding: 0 20px;
+  line-height: 38px;
+  font-size: 14px;
+  border-color: var(--ev-button-alt-border);
+  color: var(--ev-button-alt-text);
+  background-color: var(--ev-button-alt-bg);
+}
+
+.action a:hover {
+  border-color: var(--ev-button-alt-hover-border);
+  color: var(--ev-button-alt-hover-text);
+  background-color: var(--ev-button-alt-hover-bg);
+}
+
+.connection-status {
+  position: absolute;
+  bottom: 0;
+  background-color: red;
+  height: 24px;
+  width: 100%;
+  padding: 0 8px;
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  font-family: 'Menlo', 'Lucida Console', monospace;
+  background-color: #202127;
+  backdrop-filter: blur(24px);
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.connected {
+  background: greenyellow;
+}
+
+.disconnected {
+  background-color: red;
+}
+
+.spinner {
+  margin: 16px auto;
+  width: 48px;
+  height: 48px;
+  border: 6px solid rgba(0, 0, 0, 0.2);
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
